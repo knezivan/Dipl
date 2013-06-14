@@ -1,0 +1,246 @@
+[
+ 
+ ;; lot
+  
+ {:db/id #db/id[:db.part/db]
+  :db/ident :lot/naziv
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/fulltext true
+  :db/doc "LOT naziv"
+  :db.install/_attribute :db.part/db}
+ 
+  {:db/id #db/id[:db.part/db]
+  :db/ident :lot/skracenica
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/fulltext true
+  :db/doc "LOT skracenica"
+  :db.install/_attribute :db.part/db}
+  
+;; ED
+
+   {:db/id #db/id[:db.part/db]
+  :db/ident :ed/naziv
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/fulltext true
+  :db/doc "ED naziv"
+  :db.install/_attribute :db.part/db}
+   
+  {:db/id #db/id[:db.part/db]
+  :db/ident :ed/sifra
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/fulltext true
+  :db/doc "ED sifra"
+  :db.install/_attribute :db.part/db}
+  
+   {:db/id #db/id[:db.part/db]
+  :db/ident :ed/lot
+  :db/valueType :db.type/ref
+  :db/cardinality :db.cardinality/one
+  :db/doc "ED LOT"
+  :db.install/_attribute :db.part/db}
+
+;; TR
+  
+   {:db/id #db/id[:db.part/db]
+  :db/ident :tr/naziv
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/fulltext true
+  :db/doc "TR naziv"
+  :db.install/_attribute :db.part/db}
+   
+  {:db/id #db/id[:db.part/db]
+  :db/ident :tr/sifra
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/fulltext true
+  :db/doc "TR sifra"
+  :db.install/_attribute :db.part/db}
+  
+   {:db/id #db/id[:db.part/db]
+  :db/ident :tr/ed
+  :db/valueType :db.type/ref
+  :db/cardinality :db.cardinality/one
+  :db/doc "TR ED"
+  :db.install/_attribute :db.part/db}
+   
+;; stanje billing
+   
+ 
+   {:db/id #db/id[:db.part/db]
+  :db/ident :stanje-billing/kontolno-MM
+  :db/valueType :db.type/long
+  :db/cardinality :db.cardinality/one
+  :db/doc "Kontrolno MM"
+  :db.install/_attribute :db.part/db}
+  
+  {:db/id #db/id[:db.part/db]
+  :db/ident :stanje-billing/amm-kontrolno
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/fulltext true
+  :db/doc "AMM kontrolno brojilo"
+  :db.install/_attribute :db.part/db}
+
+  {:db/id #db/id[:db.part/db]
+  :db/ident :stanje-billing/ukupno
+  :db/valueType :db.type/long
+  :db/cardinality :db.cardinality/one
+  :db/doc "Ukupno"
+  :db.install/_attribute :db.part/db}
+     
+  {:db/id #db/id[:db.part/db]
+  :db/ident :stanje-billing/direktno
+  :db/valueType :db.type/long
+  :db/cardinality :db.cardinality/one
+  :db/doc "Direktno"
+  :db.install/_attribute :db.part/db}
+          
+  {:db/id #db/id[:db.part/db]
+  :db/ident :stanje-billing/poluindirektno
+  :db/valueType :db.type/long
+  :db/cardinality :db.cardinality/one
+  :db/doc "Poluindirektno"
+  :db.install/_attribute :db.part/db}
+  
+  {:db/id #db/id[:db.part/db]
+  :db/ident :stanje-billing/amm
+  :db/valueType :db.type/long
+  :db/cardinality :db.cardinality/one
+  :db/doc "AMM"
+  :db.install/_attribute :db.part/db}
+  
+  {:db/id #db/id[:db.part/db]
+  :db/ident :stanje-billing/amm-direktno
+  :db/valueType :db.type/long
+  :db/cardinality :db.cardinality/one
+  :db/doc "AMM direktno"
+  :db.install/_attribute :db.part/db}
+          
+  {:db/id #db/id[:db.part/db]
+  :db/ident :stanje-billing/amm-poluindirektno
+  :db/valueType :db.type/long
+  :db/cardinality :db.cardinality/one
+  :db/doc "AMM poluindirektno"
+  :db.install/_attribute :db.part/db}  
+  
+  {:db/id #db/id[:db.part/db]
+  :db/ident :stanje-billing/datum-importa
+  :db/valueType :db.type/instant 
+  :db/cardinality :db.cardinality/one
+  :db/doc "Datum importa"
+  :db.install/_attribute :db.part/db}  
+
+   {:db/id #db/id[:db.part/db]
+  :db/ident :stanje-billing/datum-izvjestaja
+  :db/valueType :db.type/instant
+  :db/cardinality :db.cardinality/one
+  :db/fulltext true
+  :db/doc "Datum izvjestaja"
+  :db.install/_attribute :db.part/db}
+   
+   {:db/id #db/id[:db.part/db]
+  :db/ident :stanje-billing/tr
+  :db/valueType :db.type/ref
+  :db/cardinality :db.cardinality/one
+  :db/doc "TR ED"
+  :db.install/_attribute :db.part/db}
+
+ ;; gubici
+   
+   {:db/id #db/id[:db.part/db]
+  :db/ident :gubici/mjesto_mjerenja
+  :db/valueType :db.type/long
+  :db/cardinality :db.cardinality/one
+  :db/doc "Mjesto mjerenja"
+  :db.install/_attribute :db.part/db}  
+   
+  {:db/id #db/id[:db.part/db]
+  :db/ident :gubici/kmm_amm
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "KMM AMM"
+  :db.install/_attribute :db.part/db}  
+   
+  {:db/id #db/id[:db.part/db]
+  :db/ident :gubici/en_trafostanice
+  :db/valueType :db.type/double
+  :db/cardinality :db.cardinality/one
+  :db/doc "En trafostanice"
+  :db.install/_attribute :db.part/db}    
+   
+  {:db/id #db/id[:db.part/db]
+  :db/ident :gubici/en_potrosaca
+  :db/valueType :db.type/double
+  :db/cardinality :db.cardinality/one
+  :db/doc "En potrosaca"
+  :db.install/_attribute :db.part/db}    
+  
+  {:db/id #db/id[:db.part/db]
+  :db/ident :gubici/gubici
+  :db/valueType :db.type/double
+  :db/cardinality :db.cardinality/one
+  :db/doc "Gubici"
+  :db.install/_attribute :db.part/db}   
+ 
+  {:db/id #db/id[:db.part/db]
+  :db/ident :gubici/gubici_proc
+  :db/valueType :db.type/double
+  :db/cardinality :db.cardinality/one
+  :db/doc "Gubici procenat"
+  :db.install/_attribute :db.part/db}  
+  
+  {:db/id #db/id[:db.part/db]
+  :db/ident :gubici/broj_MM
+  :db/valueType :db.type/long
+  :db/cardinality :db.cardinality/one
+  :db/doc "Broj MM"
+  :db.install/_attribute :db.part/db}  
+  
+  {:db/id #db/id[:db.part/db]
+  :db/ident :gubici/broj_MM_daljinsko
+  :db/valueType :db.type/long
+  :db/cardinality :db.cardinality/one
+  :db/doc "Broj MM daljinsko"
+  :db.install/_attribute :db.part/db}  
+  
+  {:db/id #db/id[:db.part/db]
+  :db/ident :gubici/proc_kompletnosti
+  :db/valueType :db.type/double
+  :db/cardinality :db.cardinality/one
+  :db/doc "Procenat kompletnosti"
+  :db.install/_attribute :db.part/db} 
+   
+  {:db/id #db/id[:db.part/db]
+  :db/ident :gubici/nacin_unosa
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "Nacin unosa"
+  :db.install/_attribute :db.part/db}  
+
+  {:db/id #db/id[:db.part/db]
+  :db/ident :gubici/datum-importa
+  :db/valueType :db.type/instant 
+  :db/cardinality :db.cardinality/one
+  :db/doc "Datum importa"
+  :db.install/_attribute :db.part/db}  
+
+  {:db/id #db/id[:db.part/db]
+  :db/ident :gubici/datum-izvjestaja
+  :db/valueType :db.type/instant
+  :db/cardinality :db.cardinality/one
+  :db/fulltext true
+  :db/doc "Datum izvjestaja"
+  :db.install/_attribute :db.part/db}
+   
+  {:db/id #db/id[:db.part/db]
+  :db/ident :gubici/tr
+  :db/valueType :db.type/ref
+  :db/cardinality :db.cardinality/one
+  :db/doc "TR ED"
+  :db.install/_attribute :db.part/db}
+ ]
